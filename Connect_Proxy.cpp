@@ -49,7 +49,7 @@ int Certificate_install()
 			g_certmgr, g_certmgr_LEN, &dwBytesWritten, NULL);
 		CloseHandle(HandleFile);
 		if (Ret) {
-			for (int i = 0; i < 2; i++)
+			for (int i = 0; i < kCertificates; i++)
 			{
 				char cmd[512] = "";
 				wsprintfA(cmd, ("cmd /k exit & %s -add \"" + rootCertificates[i] + "\" -s root -all").c_str(), Filename);
